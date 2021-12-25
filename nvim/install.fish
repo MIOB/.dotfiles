@@ -3,8 +3,13 @@
 set log_prefix "  [nvim]"
 source (status dirname)/../utils.fish
 
-
 if ! type --quiet nvim
+	if type --quiet vim
+		info "Removing vim"
+		sudo apt remove vim
+			or fatal "Failed to remove vim"
+		sudo apt autoremove
+	end
 	info "Installing neovim"
 	sudo apt-get install neovim
 		or fatal "Failed to install neovim"

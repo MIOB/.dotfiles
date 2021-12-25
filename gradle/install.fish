@@ -17,6 +17,8 @@ if ! type --quiet gradle
 
 	rm --recursive --force ~/.local/opt/gradle
 		or fatal "Failed to delete ~/.local/opt/gradle"
+    mkdir --parent ~/.local/opt
+        or fatal "Failed to create ~/.local/opt"
 	mv /tmp/gradle/gradle-$gradle_version ~/.local/opt/gradle
 		or fatal "Failed to move gradle to ~/.local/opt/gradle"
 	rm --recursive --force /tmp/gradle/

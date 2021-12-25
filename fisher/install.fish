@@ -4,7 +4,7 @@ set log_prefix "  [fisher]"
 source (status dirname)/../utils.fish
 
 if ! type --quiet fisher
-	"Installing fisher"
+	info "Installing fisher"
 	curl --silent --location https://git.io/fisher | source 
 		and fisher install jorgebucaran/fisher 
 		or fatal "Failed to install fisher"

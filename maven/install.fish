@@ -17,6 +17,8 @@ if ! type --quiet mvn
 
 	rm --recursive --force ~/.local/opt/maven
 		or fatal "Failed to remove ~/.local/opt/maven"
+    mkdir --parent ~/.local/opt
+        or fastal "Failed to create ~/.local/opt"
 	mv /tmp/maven/apache-maven-$maven_version ~/.local/opt/maven
 		or fatal "Failed to move maven to ~/.local/opt/maven"
 	rm --recursive --force /tmp/maven

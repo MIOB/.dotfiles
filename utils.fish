@@ -15,7 +15,7 @@ function error
 end
 
 function user_input
-	read --prompt="echo (set_color --bold blue)$argv(set_color normal)'> '"
+	read --prompt="echo (set_color --bold blue)\"$argv\"(set_color normal)'> '"
 end
 
 function fatal

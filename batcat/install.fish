@@ -4,7 +4,7 @@ set log_prefix "  [batcat]"
 source (status dirname)/../utils.fish
 
 
-if ! type --quiet batcat
+if ! type --quiet bat
 	info "Installing batcat"
 	sudo apt install bat 
 		or fatal "Failed to install batcat"

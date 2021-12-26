@@ -42,4 +42,12 @@ for installer in */install.fish
 	info "$name has been bootstraped"
 end
 
+for installer in extensions/*/install.fish
+	set --local name (basename (realpath (dirname $installer))) 
+	info "Bootstraping extension "(set_color --bold yellow)"$name"(set_color normal)
+	$installer
+		or fatal "Failed to bootstrap $name"
+	info "Extension $name has been bootstraped"
+end
+
 info "Bootstraping dotfiles has been finished"

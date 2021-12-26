@@ -1,4 +1,6 @@
 #!/usr/bin/env fish
 
-stty intr ^J
-bind \cj cancel-commandline
+if status is-interactive
+	stty intr ^J
+	bind \cj cancel-commandline
+end

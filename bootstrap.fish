@@ -3,6 +3,14 @@
 set log_prefix "[bootstrap]"
 source utils.fish
 
+if test -z (git status --short --untracked-files=all)[1]
+	info "Updating .dotfiles" 
+	git pull
+		and info ".dotfiles have been updated"
+		or error "Failed to update .dotfiles"
+else
+	info (set_color yellow)"Cannot update .dotfiles: there are changes"(set_color normal)
+end
 
 info "Bootstraping dotfiles in $dotfiles_root"
 
@@ -43,11 +51,23 @@ for installer in */install.fish
 end
 
 for installer in extensions/*/install.fish
-	set --local name (basename (realpath (dirname $installer))) 
-	info "Bootstraping extension "(set_color --bold yellow)"$name"(set_color normal)
+	set --local extension_path (realpath (dirname $installer))
+	set --local name (basename $extension_path)
+	set --local print_name (set_color --bold magenta)$name(set_color normal)
+	if test -e $extension_path/.git
+		if test -z (git --git-dir $extension_path/.git --work-tree $extension_path status --short --untracked-files=all)[1]
+			info "Updating extension $print_name" 
+			git pull
+				and info "Extension $print_name has been updated"
+				or error "Failed to update extension $print_name"
+		else
+			info (set_color yellow)"Cannot update extension $print_name: there are changes"(set_color normal)
+		end
+	end
+	info "Bootstraping extension $print_name"
 	$installer
-		or fatal "Failed to bootstrap $name"
-	info "Extension $name has been bootstraped"
+		or fatal "Failed to bootstrap $print_name"
+	info "Extension $print_name has been bootstraped"
 end
 
 info "Bootstraping dotfiles has been finished"

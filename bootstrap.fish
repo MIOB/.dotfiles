@@ -38,6 +38,7 @@ if test -z (git config --global --get user.email)
 	
 	git config --global user.name  $user_name
 		and git config --global user.email $user_email
+		and git config --global core.editor "vim"
 		or fatal "Cannot configure git"
 	info ".gitconfig has been bootstraped"
 end

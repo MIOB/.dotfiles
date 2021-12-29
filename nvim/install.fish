@@ -21,3 +21,5 @@ if ! type --quiet nvim
 end
 
 create_link (realpath (status dirname)/init.vim) ~/.config/nvim/init.vim
+
+vim +'PlugUpdate --sync' +qa

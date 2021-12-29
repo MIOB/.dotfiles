@@ -2,6 +2,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'dag/vim-fish'
 Plug 'cespare/vim-toml'
 Plug 'dracula/vim', {'as': 'dracula'}
+Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 syntax on
@@ -35,3 +37,5 @@ set showmode
 inoremap <S-Tab> <C-d>
 nnoremap <leader><space> :nohlsearch<CR>
 autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
+
+nnoremap <C-n> :NERDTreeToggle<CR>

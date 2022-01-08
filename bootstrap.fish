@@ -5,7 +5,7 @@ source utils.fish
 
 if test -z (git status --short --untracked-files=all)[1]
 	info "Updating .dotfiles" 
-	git pull
+	git pull --ff
 		and info ".dotfiles have been updated"
 		or error "Failed to update .dotfiles"
 else
@@ -58,7 +58,7 @@ for installer in extensions/*/install.fish
 	if test -e $extension_path/.git
 		if test -z (git --git-dir $extension_path/.git --work-tree $extension_path status --short --untracked-files=all)[1]
 			info "Updating extension $print_name" 
-			git --git-dir $extension_path/.git --work-tree $extension_path pull
+			git --git-dir $extension_path/.git --work-tree $extension_path pull --ff
 				and info "Extension $print_name has been updated"
 				or error "Failed to update extension $print_name"
 		else

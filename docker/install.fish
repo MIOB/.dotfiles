@@ -31,11 +31,11 @@ if ! type --quiet docker
 		 		or fatal "Failed install docker"
 		case "armv7*"
 			curl --silent --show-error --fail --location https://get.docker.com --output get-docker.sh | sudo sh
+				or fatal "Failed to install docker"
 			sudo usermod -aG docker $USER
-			
+				or fatal "Failed to add docker group to user $USER"
 		case "*"
 			fatal "Unsupported architecture"
 	end
-
  	info "Docker has been installed"
 end

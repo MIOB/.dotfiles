@@ -5,7 +5,7 @@ source (status dirname)/../utils.fish
 
 if ! type --quiet starship
 	info "Installing starship"
-	sh -c (curl -fsSL https://starship.rs/install.sh)
+	curl --silent --show-error --fail --location https://starship.rs/install.sh | bash 
 		or fatal "Failed to install starship"
 	info "Starship has been installed"
 end

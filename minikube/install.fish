@@ -4,13 +4,13 @@ set log_prefix "  [minikube]"
 source (status dirname)/../utils.fish
 
 function install_minikube --argument-names url
-	rm /tmp/minikube
+	set --local tmp_dir (mktemp --directory)
 		or fatal "Failed to delete /tmp/minikube"
-	curl --silent --show-error --fail --location $url --output /tmp/minikube
+	curl --silent --show-error --fail --location $url --output $tmp_dir
 		or fatal "Failed to download minikube from $url"
-	sudo install /tmp/minikube /usr/local/bin/minikube
+	sudo install $tmp_dir /usr/local/bin/minikube
 		or fatal "Failed to install minikube"
-	rm /tmp/minikube 
+	rm $tmp_dir
 
 end 
 

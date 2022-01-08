@@ -6,9 +6,9 @@ source (status dirname)/../utils.fish
 function install_minikube --argument-names url
 	set --local tmp_dir (mktemp --directory)
 		or fatal "Failed to delete /tmp/minikube"
-	curl --silent --show-error --fail --location $url --output $tmp_dir
+	curl --silent --show-error --fail --location $url --output $tmp_dir/minikube
 		or fatal "Failed to download minikube from $url"
-	sudo install $tmp_dir /usr/local/bin/minikube
+	sudo install $tmp_dir/minikube /usr/local/bin/minikube
 		or fatal "Failed to install minikube"
 	rm $tmp_dir
 

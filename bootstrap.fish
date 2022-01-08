@@ -29,8 +29,8 @@ end
 
 if test -z (git config --global --get user.email)
 	info "Bootstraping .gitconfig"
-	set --local user_email (user_input "What is your github author name?")
-	set --local user_name (user_input "What is your github author email?")
+	set --local user_email (user_input "What is your github author email?")
+	set --local user_name (user_input "What is your github author name?")
 
 	if test -z $user_email
 		fatal  "git email is mandatory"

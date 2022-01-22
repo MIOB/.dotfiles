@@ -30,7 +30,7 @@ if ! type --quiet docker
 		 	sudo apt install docker-ce docker-ce-cli containerd.io
 		 		or fatal "Failed install docker"
 		case "armv7*"
-			curl --silent --show-error --fail --location https://get.docker.com --output get-docker.sh | sudo sh
+			curl --silent --show-error --fail --location https://get.docker.com | sudo sh
 				or fatal "Failed to install docker"
 			sudo usermod -aG docker $USER
 				or fatal "Failed to add docker group to user $USER"

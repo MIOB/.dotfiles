@@ -67,7 +67,7 @@ for installer in extensions/*/install.fish
 	end
 	info "Bootstraping extension $print_name"
 	$installer
-		or fatal "Failed to bootstrap $print_name"
+		or error "Failed to bootstrap $print_name"
 	info "Extension $print_name has been bootstraped"
 end
 

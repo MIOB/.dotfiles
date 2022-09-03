@@ -4,6 +4,7 @@ Plug 'cespare/vim-toml'
 Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
+Plug 'bkad/CamelCaseMotion'
 call plug#end()
 
 syntax on
@@ -39,3 +40,6 @@ nnoremap <leader><space> :nohlsearch<CR>
 autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
 
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+let g:camelcasemotion_key = '<leader>'
+

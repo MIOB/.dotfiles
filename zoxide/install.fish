@@ -6,7 +6,7 @@ source (status dirname)/../utils.fish
 
 if ! type --quiet zoxide
 	info "Installing zoxide"
-	apt install zoxide
+	sudo apt install zoxide
 		or fatal "Failed to install zoxide"
 	
 	info "Zoxide has been installed"

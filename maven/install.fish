@@ -3,7 +3,7 @@
 set log_prefix "  [maven]"
 source (status dirname)/../utils.fish
 
-set --local maven_version "3.8.4"
+set --local maven_version "3.8.6"
 
 if ! type --quiet mvn
 	info "Installing maven"

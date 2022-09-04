@@ -3,7 +3,7 @@
 set log_prefix "  [exa]"
 source (status dirname)/../utils.fish
 
-set --local gradle_version "7.3.3"
+set --local gradle_version "7.5.1"
 
 if ! type --quiet gradle
 	info "Installing gradle"

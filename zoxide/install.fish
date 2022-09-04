@@ -6,7 +6,7 @@ source (status dirname)/../utils.fish
 
 if ! type --quiet zoxide
 	info "Installing zoxide"
-	curl --silent --show-error --fail --location https://webinstall.dev/zoxide | bash
+	apt install zoxide
 		or fatal "Failed to install zoxide"
 	
 	info "Zoxide has been installed"

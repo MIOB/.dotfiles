@@ -20,7 +20,7 @@ if ! type --quiet java
 			info "Installing corretto jdk"
 			sudo apt update
 				or fatal "Failed to update apt"
-			sudo apt install --yes java-11-amazon-corretto-jdk
+			sudo apt install --yes java-17-amazon-corretto-jdk
 				or fatal "Failed to install corretto"
 			info "Corrteto jdk has been installed"
 		case "armv7*"

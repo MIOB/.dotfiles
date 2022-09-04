@@ -6,7 +6,7 @@ source (status dirname)/../utils.fish
 
 if ! type --quiet fzf
 	info "Installing fzf"
-	sudo apt-get install fzf
+	sudo apt install fzf
 	
 	info "Fzf has been installed"
 end

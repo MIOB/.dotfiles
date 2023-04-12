@@ -1,4 +1,4 @@
 #!/usr/bin/env fish
 
 
-abbr --add --universal k kubectl
+abbr --add k kubectl

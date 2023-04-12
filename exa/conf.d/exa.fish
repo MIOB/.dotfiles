@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
 
-abbr --add --universal ls 'exa'
-abbr --add --universal l 'exa -lah'
-abbr --add --universal ll 'exa -l'
+abbr --add ls 'exa'
+abbr --add l 'exa -lah'
+abbr --add ll 'exa -l'
